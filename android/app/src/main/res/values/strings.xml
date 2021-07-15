@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Todd Wofford Movies</string>
+    <string name="title_activity_main">Todd Wofford Movies</string>
+    <string name="package_name">com.toddwoffordmovies.app</string>
+    <!-- <string name="custom_url_scheme">com.toddwoffordmovies.app</string> -->
+         <string name="applink_host">obka0.test-app.link</string>
+     <string name="deeplink_scheme">Toddwofford-Movies</string>
+      <string name="branch_key">key_live_ni1hME6Bf0YXgC8HXZAy8pmdqtl2820m</string>
+     <!-- <string name="branch_test_key">key_test_if4oRrYFh660nFXP7ZVENikaAue4022v</string> -->
+     <string name="branch_test_mode">false</string>
+</resources>

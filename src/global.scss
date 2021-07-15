@@ -1,0 +1,169 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;600;700&display=swap');
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+*{
+  font-family: 'Oswald', sans-serif !important;
+}
+
+
+/* Custom Css */
+a{
+  transition: all 0.3s;
+}
+
+ion-header{
+  ion-toolbar{
+    // --background: #CDAA64;
+    --background: #000;
+    color: #fff;
+  }
+
+  ion-menu-button{
+    ion-icon{
+      color: #fff;
+    }
+  }
+}
+
+.searchbar-search-icon.sc-ion-searchbar-md
+{
+  top: 14px !important;
+}
+ion-searchbar {
+  .searchbar-input-container
+  {
+    ion-icon{
+      right: 10px;
+      left: auto !important;
+      top: 6px !important;
+      width: 18px !important;
+    }
+    .searchbar-input{
+      border-radius: 6px;
+      padding-left: 15px !important;
+      padding-right: 30px;
+      height: 48px;
+      box-shadow: none;
+      background-color: transparent;
+      border: 1px solid #ececec;
+    }
+    .searchbar-clear-button
+    {
+      display: none !important;
+    }
+  }
+}
+
+ion-title.md.title-default {
+  text-align: center;
+  padding-inline-start: 0;
+}
+
+.heading {
+  font-size: 20px;
+  color: #000;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #dbdaf6;
+  &:after {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #CDAA64, #CDAA64);
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+  }
+}
+
+.bggrey
+{
+  background-color: #f5fcff;
+  padding: 10px 0;
+}
+
+[sliderbox]{
+  span{
+    height: 86px;
+    width: 86px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #e4e4e4;
+    border-radius: 11px;
+    background-color: #fff;
+    svg{
+      width: 45px;
+    }
+    img{
+      width: 45px;
+      object-fit: contain;
+    }
+  }
+  h3{
+    margin-bottom: 0;
+    font-size: 13px;
+    padding-top: 5px
+  }
+
+  a{
+    text-decoration: none;
+    color: #000;
+    &:hover{
+      text-decoration: none;
+      color: #CDAA64;
+    }
+  }
+
+}
+
+.filtermodal{
+  --max-height: 377px;
+  padding: 25px;
+  .modal-wrapper
+  {
+    border-radius: 6px;
+  }
+}
+
+ion-back-button{
+  color: #fff;
+}
+
+ion-searchbar{
+  padding-inline-start: 0px !important;
+  padding-inline-end: 0px !important;
+}
+
+ion-content
+{
+  --padding-bottom:90px;
+  ion-fab.fab-vertical-bottom {
+    bottom: 90px;
+}
+}

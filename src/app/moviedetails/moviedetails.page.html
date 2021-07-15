@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar class="py-2">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"><ion-icon name="arrow-back-outline"></ion-icon></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Movie Details</ion-title> 
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="movietop"> 
+    <!-- <img src="assets/images/post.jpg" alt="" class="img-fluid" /> -->
+    <img *ngIf="errors.indexOf(content?.image) >= 0" src="assets/images/dummy.png" class="img-fluid"/> 
+<img *ngIf="errors.indexOf(content?.image) == -1" src="{{ IMAGES_URL+'/'+content?.image }}" class="img-fluid"/>
+    <ion-card-subtitle>{{content?.category}}</ion-card-subtitle>
+    <span category>
+      <span class="liststar" *ngIf="errors.indexOf(content?.rating) == -1">
+         <ngx-stars  [size]='1' [readonly]="true" [initialStars]="content.rating" [maxStars]="5" [color]="'#f90'"></ngx-stars>
+      </span>
+    </span>
+  </div>
+  <ion-card-header class="p-3 pb0">
+    <ion-card-title>{{content?.title}}</ion-card-title>
+    <p address class="pb-0 mt-1 mb-0"><span><ion-icon name="time-outline"></ion-icon> {{dates}}</span></p>
+  </ion-card-header>
+
+  <div class="p-3" [innerHTML]="content?.description">
+  
+  </div>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="primary" (click)="shares()">
+      <ion-icon name="share-social-outline"></ion-icon>
+    </ion-fab-button>
+   <!--  <ion-fab-list side="start">
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-facebook"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-google"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-twitter"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-youtube"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-rss"></ion-icon></a>
+      </ion-fab-button>
+    </ion-fab-list> -->
+  </ion-fab>
+<section class="bggrey">
+  <ion-row class="mt-2 mb-4">
+    <ion-col size="12" class="no-padding ion-no-margin">
+      <h2 class="heading">Related Articles</h2>
+      <ion-slides slidercat pager="false" #mySlider [options]="slideOpts">
+        <ion-slide *ngFor="let data of rcontent">
+          <div sliderbox>
+            <a routerLink="/moviedetails/{{data?.id}}">
+              <span>
+              <img *ngIf="errors.indexOf(data.image) >= 0" src="assets/images/dummy.png"/> 
+<img *ngIf="errors.indexOf(data.image) == -1" src="{{ IMAGES_URL+'/'+data.image }}"/>
+              </span>
+              <div class="contentbox">
+                <h3><span>{{data?.title | slice:0:40}}</span></h3>
+                <div class="mt-2" category>
+                  <span class="rliststar">
+                   <ngx-stars  [size]='1' [readonly]="true" [initialStars]="data?.rating" [maxStars]="5" [color]="'#f90'"></ngx-stars>
+                  </span>
+                </div>
+              </div>
+            </a>
+          </div>
+        </ion-slide>
+<div style="text-align: center;background: #ccc;padding: 15px;" *ngIf="rcontent == '' && is_loaded == true" class="alert alert-danger" role="alert">
+        No Articles Found!
+      </div>
+        
+         </ion-slides>
+      
+    </ion-col>
+  </ion-row>
+</section>
+  <!-- <app-realtedarticles></app-realtedarticles> -->
+</ion-content>

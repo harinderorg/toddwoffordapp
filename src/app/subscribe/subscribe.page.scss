@@ -1,0 +1,65 @@
+h1{
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+ion-button{
+  --border-radius: 6px;
+}
+
+ion-item{
+  --padding-start:0px;
+  --min-height: 30px;
+  --inner-padding-end: 0;
+  border: 1px solid #ececec;
+  border-radius: 6px;
+
+  ion-icon{
+    position: relative;
+    left: 13px;
+    color: #8c2828;
+    font-size: 20px;
+  }
+
+  ion-input{
+    --padding-top: 8px;
+    --padding-bottom: 8px;
+    --padding-end: 0;
+    --padding-start: 25px;
+  }
+}
+
+form
+{
+  ion-label{
+    margin-bottom: 5px;
+    display: block;
+    font-size: 14px;
+    color: var(--ion-color-primary);
+  }
+}
+
+.subbox
+{
+  padding: 20px;
+  border: 1px solid #f1f1f1;
+  margin: 10px;
+  border-radius: 6px;
+}
+
+.subicon
+{
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  border-radius: 100px;
+  padding: 17px;
+  font-size: 50px;
+  margin-bottom: 14px;
+  border: 1px solid #ececec;
+  background-color: #000;
+  color: #fff;
+}
+[error]{
+  color:#ff0000;
+}

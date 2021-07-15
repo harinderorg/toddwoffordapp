@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="text-left pad15">Filter</ion-title>
+    <ion-buttons slot="end" (click)="closeModal({reset : '1'})"><ion-icon name="close-outline"></ion-icon></ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="p8">
+  <ion-row>
+    <ion-col>
+      <h1>Categories</h1>
+      <ion-grid class="ion-no-padding"> 
+        <ion-row >
+          <ion-col class="filtercat">
+            <div *ngFor="let member of cbox">
+              <ion-checkbox color="light"   (click)="catChanged($event,member.testName)" [checked]="selectedArray.indexOf(member.testName) >= 0 ? true : false"></ion-checkbox> <span>{{member.testName}}</span>
+            </div>
+            <!-- <div>
+              <ion-checkbox color="light" selected.testID == member.testID ? selected.checked : member.checked [(ngModel)]="cbox"></ion-checkbox> <span>THE ARCHIVE</span>
+            </div> -->
+          </ion-col>
+
+          <!-- <ion-col class="filtercat">
+            <div>
+              <ion-checkbox color="light" [(ngModel)]="cbox"></ion-checkbox> <span>GREATEST</span>
+            </div>
+            <div>
+              <ion-checkbox color="light" [(ngModel)]="cbox"></ion-checkbox> <span>THE LAUGHABLE</span>
+            </div>
+          </ion-col> -->
+        </ion-row>
+      </ion-grid>
+    </ion-col>
+  </ion-row>
+  <hr />
+  <ion-row>
+    <ion-col>
+      <h1>Rating</h1>
+      <!-- <div class="ion-no-padding"> -->
+        <ion-item lines="none" no-padding no-border>
+     <ion-range color="primary" dualKnobs="true"  min="1" max="5" step="1" [(ngModel)]="rating" (ionChange)="rateChanged($event)">
+      <ion-label pos-left slot="start">{{min_rate}}</ion-label>
+        <ion-label pos-right slot="end">{{max_rate}}</ion-label>
+    </ion-range>
+    </ion-item>
+        <!-- <ion-row>
+          <ion-col class="d-flex align-items-center"> -->
+           <!--  <span class="d-flex align-items-center">
+              
+        <input type="radio" name="radio" value="1"  [(ngModel)]="rating">
+        <span class="checkmark"></span> 
+       <label class="ratlabl">1+ </label>
+            </span>
+            <span class="d-flex align-items-center">
+             
+        <input type="radio" name="radio" value="2"  [(ngModel)]="rating">
+        <span class="checkmark"></span> 
+         <label class="ratlabl">2+</label>
+            </span>
+            <span class="d-flex align-items-center">
+              
+        <input type="radio" name="radio" value="3"  [(ngModel)]="rating">
+        <span class="checkmark"></span> 
+        <label class="ratlabl">3+</label>
+            </span>
+            <span class="d-flex align-items-center">
+             
+        <input type="radio" name="radio" value="4" checked [(ngModel)]="rating">
+        <span class="checkmark"></span> 
+         <label class="ratlabl">4+</label>
+            </span> -->
+            
+<!--           </ion-col>
+        </ion-row> -->
+      <!-- </div> -->
+      <div class="mt-3">
+        <ion-button color="primary" (click)="applyFilters()" ion-button type="submit" block>Apply</ion-button>
+        <ion-button class="ml-2" (click)="clearFilters()" color="light" ion-button type="submit" block>Clear</ion-button>
+      </div>
+    </ion-col>
+  </ion-row>
+</ion-content>

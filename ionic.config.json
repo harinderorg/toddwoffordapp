@@ -1,0 +1,8 @@
+{
+  "name": "toddwoffordmovies",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

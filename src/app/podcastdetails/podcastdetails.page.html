@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-toolbar class="py-2">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/podcast"><ion-icon name="arrow-back-outline"></ion-icon></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>Podcast Details</ion-title>
+
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content>
+  <div class="movietop" *ngIf="content?.video_type == 'video'">
+    
+             <img *ngIf="errors.indexOf(content?.video) >= 0" class="img-fluid" src="assets/images/dummy.png" />
+                    <video *ngIf="errors.indexOf(content?.video) == -1" class="img-fluid" src="{{IMAGES_URL+'/'+content.video}}" controls></video>
+                  <span category>
+     <span class="liststar" *ngIf="errors.indexOf(content?.rating) == -1">
+         <ngx-stars  [size]='1' [readonly]="true" [initialStars]="content.rating" [maxStars]="5" [color]="'#f90'"></ngx-stars>
+      </span>
+    </span>
+  </div>  
+           
+              <div class="movietop" *ngIf="content?.video_type == 'link'">
+             <img *ngIf="errors.indexOf(content?.youtube_link) >= 0" class="img-fluid" src="assets/images/dummy.png" />
+                    
+                    <iframe class="img-fluid" *ngIf="errors.indexOf(content?.youtube_link) == -1"  [class.thumbnail]="thumbnail" [src]="video_url" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
+            
+    <!-- <img src="assets/images/vpost.png" alt="" class="img-fluid" /> -->
+    <span category>
+     <span class="liststar" *ngIf="errors.indexOf(content?.rating) == -1">
+         <ngx-stars  [size]='1' [readonly]="true" [initialStars]="content.rating" [maxStars]="5" [color]="'#f90'"></ngx-stars>
+      </span>
+    </span>
+  </div>
+  <ion-card-header class="p-3 pb0">
+    <ion-card-title>{{content?.title}}</ion-card-title>
+    <p address class="pb-0 mt-1 mb-0"><span><ion-icon name="time-outline"></ion-icon> {{dates}}</span></p>
+  </ion-card-header>
+
+  <div class="p-3" [innerHTML]="content?.description">
+   
+  </div>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="primary" (click)="shares()">
+      <ion-icon name="share-social-outline"></ion-icon>
+    </ion-fab-button>
+   <!--  <ion-fab-list side="start">
+      <ion-fab-button color="medium" size="small" >
+        <a routerLink="#"><ion-icon name="logo-facebook"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-google"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-twitter"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-youtube"></ion-icon></a>
+      </ion-fab-button>
+      <ion-fab-button color="medium" size="small">
+        <a routerLink="#"><ion-icon name="logo-rss"></ion-icon></a>
+      </ion-fab-button>
+    </ion-fab-list> -->
+  </ion-fab>
+
+  <app-subscribeslider></app-subscribeslider>
+</ion-content>

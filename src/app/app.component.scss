@@ -1,0 +1,174 @@
+ion-menu ion-content {
+  --background: #000;
+}
+
+ion-menu.md ion-content {
+  --padding-start: 0;
+  --padding-end: 0;
+  --padding-top: 0;
+  --padding-bottom: 0;
+}
+
+ion-menu.md ion-list {
+  padding: 0;
+}
+
+ion-menu.md ion-note {
+  margin-bottom: 30px;
+}
+
+ion-menu.md ion-list-header,
+ion-menu.md ion-note {
+  padding-left: 10px;
+}
+
+ion-menu.md ion-list#inbox-list {
+
+  background-color: #000;
+}
+
+ion-menu.md ion-list#inbox-list ion-list-header {
+  font-size: 22px;
+  font-weight: 600;
+
+  min-height: 20px;
+}
+
+ion-menu.md ion-list#labels-list ion-list-header {
+  font-size: 16px;
+
+  margin-bottom: 18px;
+
+  color: #757575;
+
+  min-height: 26px;
+}
+
+ion-menu.md ion-item {
+  --padding-start: 18px;
+  --padding-end: 18px;
+  border-radius: 0;
+  --background: #000;
+    color: #fff;
+}
+
+ion-menu.md ion-item.selected {
+  --background: #fff;
+  color: #000;
+}
+
+ion-menu.md ion-item.selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-menu.md ion-item ion-icon {
+  color: #616e7e;
+}
+
+ion-menu.md ion-item ion-label {
+  font-weight: 500;
+}
+
+ion-menu.ios ion-content {
+  --padding-bottom: 20px;
+}
+
+ion-menu.ios ion-list {
+  padding: 0;
+}
+
+ion-menu.ios ion-note {
+  line-height: 24px;
+  margin-bottom: 20px;
+}
+
+ion-menu.ios ion-item {
+  --padding-start: 16px;
+  --padding-end: 16px;
+  --min-height: 50px;
+}
+
+ion-menu.ios ion-item.selected ion-icon {
+  color: var(--ion-color-primary);
+}
+
+ion-menu.ios ion-item ion-icon {
+  font-size: 24px;
+  color: #73849a;
+}
+
+ion-menu.ios ion-list#labels-list ion-list-header {
+  margin-bottom: 8px;
+}
+
+ion-menu.ios ion-list-header,
+ion-menu.ios ion-note {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+ion-menu.ios ion-note {
+  margin-bottom: 8px;
+}
+
+ion-note {
+  display: inline-block;
+  font-size: 16px;
+
+  color: var(--ion-color-medium-shade);
+}
+
+ion-item.selected {
+  --color: var(--ion-color-primary);
+}
+
+.overscroll{
+  ion-list{
+    background-color: #000;
+    ion-item{
+      --background: #000;
+      border-bottom: 1px solid #1b1b1b;
+
+      ion-icon{
+        margin-right: 8px;
+      }
+      ion-label{
+        color: #fff;
+        font-size: 14px !important;
+      }
+    }
+  }
+}
+
+.overscroll{
+  .selected
+  {
+    --background: #fff !important;
+    ion-label{
+      color: #000 !important;
+    }
+  }
+}
+
+ion-menu{
+  ion-content{
+    --background: #000 !important;
+  }
+}
+
+.logo
+{
+  margin-bottom: 0;
+  padding: 6px 15px 10px;
+  width: 100%;
+}
+
+.socialicons
+{
+  a{
+    padding: 10px 16px;
+    display: inline-block;
+    font-size: 20px;
+    color: #fff;
+  }
+}
