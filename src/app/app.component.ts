@@ -43,12 +43,10 @@ private activatedRoute: ActivatedRoute,private platform: Platform,
 this.viewpodcastsetting();
 this.initializeApp();
 
- AdMob.initialize("ca-app-pub-1450615658019568~1330832078");
-console.log(BranchDeepLinks)
-this.showTabBarBanner();
- 
-  
-
+        // AdMob.initialize("ca-app-pub-1450615658019568~4567170788");
+        // console.log(BranchDeepLinks)
+        // this.showTabBarBanner();
+      
   }
 
   // ionViewDidEnter(){
@@ -58,7 +56,7 @@ this.showTabBarBanner();
  showTabBarBanner() {
     console.log('ad worked');
     const options: AdOptions = {
-      adId: 'ca-app-pub-1450615658019568/3842758429',
+      adId: 'ca-app-pub-1450615658019568/3254089113',
       adSize: AdSize.SMART_BANNER,
       position: AdPosition.BOTTOM_CENTER,
      autoShow: false,

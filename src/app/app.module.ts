@@ -9,12 +9,14 @@ import { CustomRequestOptions } from './services/CustomRequestOptions';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TruncateModule } from 'ng2-truncate';
-
+import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,HttpModule,TruncateModule],   
-  providers: [ StatusBar,
+  providers: [
+    AdMobFree,
+    StatusBar,
     SplashScreen,{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   { provide: RequestOptions, useClass: CustomRequestOptions }],
   bootstrap: [AppComponent],

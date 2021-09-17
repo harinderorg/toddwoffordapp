@@ -22,7 +22,8 @@
           <ion-button expand="block" className="ion-margin-bottom" color="success" (click)="loadInterstitialVideo()">load Interstitial video Ad</ion-button>
           <ion-button expand="block" className="ion-margin-bottom" color="success" (click)="showinterstitialvideo()">Show Interstitial video Ad</ion-button> -->
   <ion-grid>
-    <ion-row *ngFor="let data of content | filter:filterTerm " routerLink="/moviedetails/{{data?.id}}">
+    <!-- <ion-row *ngFor="let data of content | filter:filterTerm " routerLink="/moviedetails/{{data?.id}}"> -->
+      <ion-row *ngFor="let data of content | filter:filterTerm " (click)= " runAdd()">
       <ion-item lines="none" >
         <ion-thumbnail>
             <a >

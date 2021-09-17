@@ -94,7 +94,7 @@ else {
   loadInterstitial() {
     console.log('load image interstitial');
     const options: AdOptions = {
-      adId: 'ca-app-pub-1450615658019568/2088491927',
+      adId: 'ca-app-pub-1450615658019568/4799939220',
       autoShow: false
     }
     AdMob.prepareInterstitial(options)
@@ -124,7 +124,7 @@ else {
     loadInterstitialVideo() {
        console.log('load video interstitial');
     const options: AdOptions = {
-      adId: 'ca-app-pub-1450615658019568/2088491927',
+      adId: 'ca-app-pub-1450615658019568/4799939220',
       autoShow: false
     }
     AdMob.prepareInterstitial(options)

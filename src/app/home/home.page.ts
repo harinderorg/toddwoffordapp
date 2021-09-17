@@ -8,7 +8,10 @@ import {Plugins} from '@capacitor/core';
 import { IonSlides, ModalController } from '@ionic/angular';
 import { FilterPage } from '../filter/filter.page';
 import { AdOptions, AdSize, AdPosition } from 'capacitor-admob';
+import { AdMobPlugin } from 'capacitor-admob';
+import { AdMobFree, AdMobFreeBannerConfig, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free/ngx';
 const { AdMob, Toast } = Plugins;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -44,10 +47,10 @@ allowedMimes:any=config.IMAGE_EXTENSIONS;
     ];
   @ViewChild('mySlider')  slides: IonSlides;
 @ViewChild('contents', {static: true}) private contents: any;
-  constructor(public modalController: ModalController,public events1: EventService, 
+  constructor(private admobFree: AdMobFree, public modalController: ModalController,public events1: EventService, 
    private router: Router, public userService: UserService,private ref: ChangeDetectorRef, 
     private activatedRoute: ActivatedRoute) {
-AdMob.initialize("ca-app-pub-1450615658019568~1330832078");
+// AdMob.initialize("ca-app-pub-1450615658019568~4567170788");
   }
 
    ionViewDidEnter(){
@@ -221,4 +224,25 @@ AdMob.initialize("ca-app-pub-1450615658019568~1330832078");
   }
 
 
+  runAdd() {
+
+    this.userService.presentLoading();
+    let interstitialConfig: AdMobFreeInterstitialConfig = {
+      isTesting: true,  
+      autoShow: true,
+      id: "ca-app-pub-3940256099942544/8691691433"
+    };
+    this.admobFree.interstitial.config(interstitialConfig);
+    this.admobFree.interstitial.prepare().then(() => {
+
+      setTimeout(() => {
+        this.userService.stopLoading();
+      }, 10000);
+      
+      
+    }).catch(e => {
+      this.userService.stopLoading();
+    });
+    
+  } 
 }
